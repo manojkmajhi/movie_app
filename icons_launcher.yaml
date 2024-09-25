@@ -1,5 +1,5 @@
 icons_launcher:
-  image_path: "assets/logo/ToolKit.png"
+  image_path: "assets/logo/hamro_movie.png"
   platforms:
     android:
       enable: true

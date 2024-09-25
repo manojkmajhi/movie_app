@@ -9,14 +9,44 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('HomeView'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
+      // appBar: AppBar(
+      //   title: const Text('HomeView'),
+      //   centerTitle: true,
+      //   backgroundColor: Colors.red,
+      // ),
+      body: Obx(() => Center(
+            child: (controller.subviews[controller.currentIndex.value]),
+          )),
+      bottomNavigationBar: Obx(
+        () => BottomNavigationBar(
+          selectedItemColor: Get.theme.colorScheme.primary,
+          unselectedItemColor: Get.theme.colorScheme.secondary,
+          showUnselectedLabels: true,
+          backgroundColor: Get.theme.colorScheme.outlineVariant,
+          currentIndex: controller.currentIndex.value,
+          onTap: (value) {
+            controller.currentIndex.value = value;
+          },
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.movie,
+              ),
+              label: 'Movies',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: "Search",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.bookmark),
+              label: 'Saved',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
+            ),
+          ],
         ),
       ),
     );
