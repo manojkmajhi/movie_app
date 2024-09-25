@@ -9,7 +9,7 @@ class HomeController extends GetxController {
 
   final count = 0.obs;
   var currentIndex = 0.obs;
-  var subviews = [
+  var subviews = [   
     const MoviesView(),
     const WatchlistView(),
     const ShowView(),

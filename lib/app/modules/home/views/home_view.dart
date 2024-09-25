@@ -39,12 +39,12 @@ class HomeView extends GetView<HomeController> {
               label: "Search",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.bookmark),
+              icon: Icon(Icons.remove_red_eye_rounded),
               label: 'Saved',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
+              icon: Icon(Icons.tv),
+              label: 'Show',
             ),
           ],
         ),
